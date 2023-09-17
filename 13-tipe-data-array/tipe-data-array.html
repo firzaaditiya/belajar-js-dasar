@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Array</title>
+</head>
+<body>
+    <script>
+        /*
+            macam macam operasi dalam array
+
+            var.push() , untuk menambahkan data
+            var.length , untuk mendapatkan panjang array
+            var[index] , untuk mendapatkan data dengan posisi index tertentu
+            var[index] = value , untuk memberikan/mengubah data pada index tertentu
+            delete var[index] , untuk menghapus data pada index tertentu, namun tidak bergeser indexnya
+        */
+
+        let arrayKosong = [];
+
+        // indexing dimulai dari 0
+        let arrayNama = ["Firza", "Aditiya", "Ardiansah", 1, true];
+
+        const names = [];
+        names.push("Firza");
+        names.push("Aditiya", "Ardiansah");
+        names.push("Daus", "Joko", "Kurumi");
+
+        console.table(names);
+
+        console.info(names[0]);
+        console.info(names[1]);
+        console.info(names[2]);
+
+        names[0] = "Yuki";
+
+        console.table(names);
+        console.info(names.length);
+        
+        delete names[3];
+        console.table(names);
+        console.info(names.length);
+        
+        names.push("Hayuza");
+        console.table(names);
+        console.info(names.length);
+        
+        names[3] = "Ditambah lagi";
+        names.push(1,2,3,4,5);
+
+        // array multidimensi
+        names.push(["Firza", "Aditiya", "Ardiansah"]);
+
+        // mengakses langsung data array multidimensi
+        console.info(names[12][0]);
+        console.info(names[12][1]);
+        console.info(names[12][2]);
+
+        console.table(names);
+        console.info(names.length);
+
+    </script>
+</body>
+</html>

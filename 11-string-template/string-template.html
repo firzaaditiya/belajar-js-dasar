@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template</title>
+</head>
+<body>
+    <script>
+        /*
+            dalam pembuatan string template kita menggunakan (backtip) yaitu ``
+
+            kita bisa mengsubstitusikan sebuah string tanpa perlu menambah terlebih dahulu
+        */
+
+        const name = "Firza Aditiya Ardiansah";
+        /*
+            alih alih kita menggunakan cara seperti
+
+            const template = "Name : " + name;
+
+            lebih baik gunakan string template
+        */
+
+        const template = `Name : ${name}`; // ${name} akan diganti dengan value dari variable name
+
+        const firstName = "Firza";
+        const middleName = "Aditiya";
+        const lastName = "Ardiansah";
+
+        const newTemplate = `Name : ${firstName} ${middleName} ${lastName}`;
+
+        console.info(template);
+        console.info(newTemplate);
+    </script>
+</body>
+</html>

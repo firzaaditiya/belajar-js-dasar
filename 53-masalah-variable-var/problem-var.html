@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Variable Var</title>
+</head>
+<body>
+    <script>
+        /*
+            kenapa dalam pembuatan variable kita lebih disarankan menggunkan kata kunci "let" dibandingkan "var"
+
+            karena alasan kenapa "var" tidak direkomendasikan adalah karena "var" tidak memiliki block scope
+            artinya dia tidak terikat ke local scope atau tempat dimana dia di definisikan misal seperti
+            di dalam function artinya local scope nya berada di dalam scope function itu saja
+        */
+
+        // global scope
+        let i = 20;
+
+        for (let i = 1; i <= 10; i++) {
+            // local scope
+            console.info(`Local : ${i}`);
+        }
+
+        console.info(`Global : ${i}`);
+
+        // membuat variable dengan var dan masalah nya
+        var iVar = 20;
+
+        for (var iVar = 1; iVar <= 10; iVar++) {
+            console.info(`Local : ${iVar}`);
+        }
+        console.info(`Global : ${iVar}`);
+
+    </script>
+</body>
+</html>

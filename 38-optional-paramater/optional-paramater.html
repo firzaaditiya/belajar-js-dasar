@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional Paramater</title>
+</head>
+<body>
+    <script>
+        /*
+            secara default di javascript paramater pada function itu optional, artinya
+            kita tidak wajib mengisi value nya ketika memanggil function
+
+            jika tidak ada value yang kita kirim ke paramater ketika memanggil function, maka secara otomatis
+            paramater tersebut bernilai undefined
+        */
+
+        function sayHello(firstName, middleName, lastName)
+        {
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        sayHello();
+        sayHello("Firza");
+        sayHello("Firza", "Aditiya");
+        sayHello("Firza", "Aditiya", "Ardiansah");
+
+        // paramter nya kelebihan 1 yaitu "itsuki" dan ini tidak akan diambil dan tidak error
+        // paramater "itsuki" akan diabaikan
+        sayHello("Firza", "Aditiya", "Ardiansah", "Itsuki");
+    </script>
+</body>
+</html>

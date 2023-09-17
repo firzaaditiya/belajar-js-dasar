@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Object2</title>
+</head>
+<body>
+    <script>
+        const person = {
+            firstName: "firza",
+            lastName: "aditiya",
+            address: {
+                street: "Jl.Jambu",
+                city: "Depok",
+                country: "Indonesian"
+            },
+            hobby: "Game",
+            channel: "Tujuan Pelajar"
+        };
+
+        /*
+            ketika kita ingin melakukan destructuring data object, nama variable nya harus sama dengan property
+            yang ada di object, namun jika kita tidak ingin menggunakan nama variable yang sama itu bisa
+        */
+        const {firstName: namaDepan,
+            lastName: namaBelakang,
+            otherName: namaLain = "Hayuza"
+        } = person;
+
+        console.info(namaDepan);
+        console.info(namaBelakang);
+        console.info(namaLain);
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika di non Boolean</title>
+</head>
+<body>
+    <script>
+        /*
+            operator AND (&&), membaca dari kiri ke kanan
+
+            pattern: DATA_KIRI && DATA_KANAN
+            
+            operator ini akan mengambil nilai pertama yang falsy (false)
+
+            jika data kiri falsy maka data kiri yang akan diambil
+
+            jika data kiri truthy dan data kanan falsy maka data kanan yang akan diambil
+
+            jika kedua nya truthy (true) maka akan diambil data yang kanan
+        */
+
+        console.info("hello" && ''); // ''
+        console.info("" && []); // ""
+        console.info("0" && "NOL"); // "NOL"
+        console.info(0 && "NOL"); // 0
+        console.info(null && "NULL"); // null
+        console.info("0" && "NOL"); // "NOL"
+        console.info(undefined && "UNDEFINED"); // undefined
+
+        // jika kedua nya truthy maka data kanan yang akan diambil
+        console.info(true && 100); // 100
+        console.info("undefined" && "null"); // "null"
+    </script>
+</body>
+</html>

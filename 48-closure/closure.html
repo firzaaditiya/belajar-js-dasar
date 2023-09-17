@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+<body>
+    <script>
+        /*
+            closure adalah kombinasi function dan bundel referensi ke data sekitarnya
+
+            dengan kemampuan closure kita bisa membuat sebuah function di local scope dan referensi
+            ke data disekitar local scope tersebut, keluar scope nya
+        */
+
+        function createAdder(value)
+        {
+            const owner = "Firza";
+
+            function add(param)
+            {
+                console.info(owner);
+                return value + param;
+            }
+
+            // return function add()
+            return add;
+        }
+
+        const addTwo = createAdder(2);
+        /*
+            function addTwo(2)
+            {
+                console.info("Firza");
+                return 2 + param;
+            }
+        */
+        
+        console.info(addTwo(10));
+        console.info(addTwo(20));
+
+        const addTen = createAdder(10);
+
+        console.info(addTen(10));
+        console.info(addTen(20));
+
+    </script>
+</body>
+</html>

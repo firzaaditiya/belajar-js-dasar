@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defualt Paramater</title>
+</head>
+<body>
+    <script>
+        function register(name, gender = "UNKNOWN")
+        {
+            console.info(name);
+            console.info(gender);
+        }
+
+        register("Firza", "Male");
+        register("Firza");
+        register("Firza", undefined);
+
+        // jika kita mengirim null maka akan tampil null karena null itu artinya sudah ada datanya namun kosong
+        // berbeda dengan undefined yang benar benar belum di inisialisasi data nya
+        register("Firza", null);
+    </script>
+</body>
+</html>

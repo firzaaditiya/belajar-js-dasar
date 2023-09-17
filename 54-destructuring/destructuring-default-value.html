@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Default Value</title>
+</head>
+<body>
+    <script>
+        /*
+            di dalam destructuring menarik nya kita bisa menambahkan default value jika data nya tidak ada
+            di dalam array nya, atau object jika property nya tidak ada
+
+            kita bisa menambahkan default value
+        */
+
+        {
+            const names = ["Firza", "Aditiya"];
+            // defualt value
+            const [firstName, middleName, lastName = "Ardiansah"] = names;
+
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        {
+            // jika data nya ada dia tidak akan mengambil data defaut value
+            const nama = ["Firza", "Aditiya", "Itsuki"];
+            const [firstName, middleName, lastName = "Ardiansah"] = nama;
+
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+
+        {
+            const person = {
+                firstName: "Firza",
+                middleName: "Aditiya"
+            };
+
+            const {firstName, middleName, lastName = "Hayuza"} = person;
+            
+            console.info(firstName);
+            console.info(middleName);
+            console.info(lastName);
+        }
+    </script>
+</body>
+</html>

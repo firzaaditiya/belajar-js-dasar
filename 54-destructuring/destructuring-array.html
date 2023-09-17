@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring</title>
+</head>
+<body>
+    <script>
+        /*
+            destructuring adalah sebuah fitur yang bisa digunakan untuk membongkar value-value di array atau
+            object ke dalam variable-variable
+
+            fitur ini sangat mempermudah kita ketika ingin mengambil data array atau object tanpa harus melakukan
+            pengambilan data satu per satu
+        */
+
+        // mengambil data secara manual
+        const names = ["Firza", "Aditiya", "Ardiansah"];
+
+        let firstName = names[0];
+        let middleName = names[1];
+        let lastName = names[2];
+
+        console.info(firstName);
+        console.info(middleName);
+        console.info(lastName);
+
+        const nama = ["Firza", "Aditiya", "Ardiansah", "Yuki", "Somat"];
+
+        // mengunakan destructuring
+        const [namaDepan, namaTengah, namaBelakang, ...others] = nama;
+
+        console.info(namaDepan);
+        console.info(namaTengah);
+        console.info(namaBelakang);
+        console.table(others);
+    </script>
+</body>
+</html>

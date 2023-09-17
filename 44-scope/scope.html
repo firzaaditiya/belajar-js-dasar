@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope</title>
+</head>
+<body>
+    <script>
+        // global scope
+        let counter = 0;
+
+        // function hitMe berada di global scope
+        function hitMe()
+        {
+            // local scope function hitMe
+
+            counter++; // tetap bisa mengakses nya karena dia didefinisikan di global scope
+        }
+
+        // function other berada di global scope
+        function other()
+        {
+            // local scope function other
+
+            // kita bisa mengakses function hitMe karena dia didefinisikan di global scope
+            hitMe();
+        }
+
+        hitMe();
+        hitMe();
+        hitMe();
+
+        console.info(`Counter Total Hit : ${counter}`);
+
+        function first()
+        {
+            let firstVariable = "First";
+        }
+
+        function second()
+        {
+            let secondVariable = "Second";
+            // console.info(firstVariable); // ERROR
+        }
+
+        first();
+        second();
+
+        // global scope
+        // console.info(firstVariable); // ERROR
+        // console.info(secondVariable); // ERROR
+    </script>
+</body>
+</html>

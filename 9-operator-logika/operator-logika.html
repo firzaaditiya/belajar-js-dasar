@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika</title>
+</head>
+<body>
+    <script>
+        /*
+            operator logika
+
+            && AND
+            || OR
+            ! NOT
+        */
+
+        const nilaiUjian = 90;
+        const nilaiAbsensi = 70;
+
+        const lulusUjian = nilaiUjian > 75;
+        document.writeln("<p>" + lulusUjian + "</p>");
+        const lulusAbsensi = nilaiAbsensi > 75;
+        document.writeln("<p>" + lulusAbsensi + "</p>");
+
+        const lulus = lulusUjian && lulusAbsensi;
+        document.writeln("<p>" + lulus + "</p>");
+    </script>
+</body>
+</html>

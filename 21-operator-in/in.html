@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator In</title>
+</head>
+<body>
+    <script>
+        /*
+            operator in berguna untuk mengecek apakah suatu property/attribute ada pada suatu object
+            atau tidak, ini akan menghasilkan nilai boolean, ini juga bisa digunakan pada array untuk
+            mengecek index
+        */
+
+        const person = {
+            firstName: "Firza",
+            lastName: "Aditiya"
+        };
+
+        const result = "firstName" in person;
+        document.writeln(`<p>${result}</p>`);
+
+        const odata = {
+            "data": null,
+            "total": undefined
+        };
+
+        const resultOdata = "data" in odata;
+        document.writeln(`<p>${resultOdata}</p>`);
+
+        const adata = [null, 100, null];
+        const resultAdata = 0 in adata;
+
+        document.writeln(`<p>${resultAdata}</p>`);
+
+    </script>
+</body>
+</html>

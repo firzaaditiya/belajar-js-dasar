@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructuring Object</title>
+</head>
+<body>
+    <script>
+        // mengambil data dari object
+        const person = {
+            firstName: "firza",
+            lastName: "aditiya",
+            address: {
+                street: "Jl.Jambu",
+                city: "Depok",
+                country: "Indonesian"
+            },
+            hobby: "Game",
+            channel: "Tujuan Pelajar"
+        };
+
+        // cara manual
+        // const nama_depan = person.firstName;
+
+        // cara menggunkan destructuring object const {} atau let {}
+        const {firstName, lastName, address, ...others} = person;
+
+        console.info(firstName);
+        console.info(lastName);
+        console.info(address);
+
+        // ini akan menjadi object bukan array
+        console.info(others);
+
+        console.info(address.country);
+        console.info(others.channel);
+
+        const orang = {
+            namaDepan: "firza",
+            namaBelakang: "aditiya",
+            alamat: {
+                jalan: "Jl.Jambu",
+                kota: "Depok",
+                negara: "Indonesian"
+            },
+            hobi: "Game",
+            channel: "Tujuan Pelajar"
+        };
+
+        // destructuring nested object
+        /*
+            ketika kita melakukan destructuring nested object, property nested objet nya sudah tidak bisa
+            di akses seperti pada kasus dibawah adalah property "alamat"
+
+            nama variable harus sama dengan nama property
+        */
+        const {namaDepan, namaBelakang, alamat: {jalan, kota, negara}, ...lain} = orang;
+        console.info(namaDepan);
+        console.info(namaBelakang);
+        console.info(jalan);
+        console.info(kota);
+        console.info(negara);
+        console.info(lain);
+        // console.info(alamat); ERROR
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Logika non Boolean</title>
+</head>
+<body>
+    <script>
+        /*
+            di javascript kita bisa menggunakan operator logika AND dan OR untuk tipe data non boolean
+
+            operator OR (||) membaca dari kiri ke kanan
+
+            pattern : DATA_KIRI || DATA_KANAN
+
+            operator ini akan mengambil nilai pertama yang truthy (true)
+
+            jika data kiri adalah true maka data kiri akan di ambil, namun jika data kiri false dan data kanan true
+            maka data kanan akan diambil
+
+            jika tidak ada satupun yang truthy (true) maka yang terakhir yang diambil (data kanan)
+        */
+
+        console.info("hello" || ''); // "hello"
+        console.info("" || []); // []
+        console.info("0" || "NOL"); // "0"
+        console.info(0 || "NOL"); // "NOL"
+        console.info(null || "NULL"); // "NULL"
+        console.info("0" || "NOL"); // "0"
+        console.info(undefined || "UNDEFINED"); // "UNDEFINED"
+
+        // ketika kedua nya tidak truthy (true), maka data kanan yang diambil
+        console.info(0 || false); // false
+
+        // contoh penggunaan, ketika kita ingin mengambil data nama, jika firstname tidak ada maka ambil lastname
+        const person = {
+            firstName: "",
+            lastName: "Aditiya"
+        };
+
+        const name = person.firstName || person.lastName;
+        console.info(name);
+    </script>
+</body>
+</html>

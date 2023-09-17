@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursive</title>
+</head>
+<body>
+    <script>
+        function loopBiggerToSmaller(value) {
+            if (value <= 1) {
+                console.info(`${value}`);
+                return 1;
+            } else {
+                console.info(`${value}`);
+                return loopBiggerToSmaller(value - 1);
+            }
+        }
+
+        function loopSmallerToBigger(value, start = 1)
+        {
+            if (value <= 1) {
+                console.info(start);
+                return start;
+            } else {
+                console.info(start);
+                return start + loopSmallerToBigger(value - 1, start + 1);
+            }
+        }
+
+        // From ChatGPT
+        function recursiveLoop(start, end)
+        {
+            if (start <= end) {
+                console.info(start);
+                recursiveLoop(start + 1, end);
+            }
+        }
+
+        // loopBiggerToSmaller(10);
+        // recursiveLoop(1, 10);
+        loopSmallerToBigger(10);
+    </script>
+</body>
+</html>

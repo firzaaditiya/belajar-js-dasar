@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyword This</title>
+</head>
+<body>
+    <script>
+        /*
+            kata kunci "this" adalah referensi ke object milik siapa
+
+            tiap lokasi kata kunci "this", bisa berbeda referensi pemilik nya
+
+            di dalam object method this merupakan referensi ke object pemilik function nya
+
+            di global scope maupun di dalam function "this" adalah referensi ke global object
+
+            namun di dalam function dengan strict mode, "this" adalah undefined
+        */
+
+        console.info(this);
+
+        function sample()
+        {
+            console.info(this);
+        }
+
+        sample();
+
+        const person = {
+            name: "firza",
+            sayHello: function (name) {
+                console.info(`Hello ${name} my name is ${this.name}`);
+            }
+        };
+
+        person.sayHello("aditiya");
+    </script>
+</body>
+</html>

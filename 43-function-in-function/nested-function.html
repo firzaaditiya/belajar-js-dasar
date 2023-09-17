@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Function</title>
+</head>
+<body>
+    <script>
+        /*
+            tidak ada batasan dimana kita bisa membuat function
+
+            termasuk jika kita ingin membuat sebuah function didalam sebuah function
+
+            function yang berada didalam function disebut inner function
+
+            inner function hanya bisa di akses didalam tempat kita membuat function nya, tidak bisa
+            di akses di luar scope parent function nya
+        */
+
+        function outer()
+        {
+            function inner()
+            {
+                console.info("Inner");
+            }
+
+            inner();
+            inner();
+        }
+
+        outer();
+
+        /*
+            error undefined, karena inner tidak di definisikan di scope ini, melainkan
+            didefinisikan di dalam scope function outer()
+        */
+        inner();
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+</head>
+<body>
+    <script>
+        /*
+            arrow function adalah alternatif pembuatan function yang lebih sederhana dari function biasanya
+
+            fitur arrow function mulai tersedia pada ECMA SCRIPT 6 (ES6)
+
+            walau lebih simple namun ada batasan limitasi dan tidak bisa digunakan disemua situasi
+
+            dinamakan arrow function karena menggunakan tanda => (seperti panah)
+
+            berikut kekurangan arrow function
+            - tidak memiliki fitur arguments object
+            - tidak bisa menggunakan function generator
+            - tidak bisa mengakses this (yang nanti akan di bahas di function object)
+            - tidak bisa mengakses super (yang nanti akan di bahas di javascript OOP)
+
+            arrow function tidak bisa berdiri dengan sendiri dia harus di simpan di variable atau di dalam paramater
+        */
+
+        // contoh pembuatan arrow function
+        const sayHello = (name) => {
+            const say = `Hello ${name}`;
+            console.info(say);
+        };
+
+        sayHello("Firza");
+
+        /*
+            membuat arrow function tanpa block, namun syarat nya adalah harus 1 baris atau di baris yang sama
+        */
+        const greeting = (name) => console.info(`Hello ${name}`);
+        greeting("Yuki");
+       
+        /*
+            arrow function dengan return value
+
+            jika kita tidak menggunakan block kita tidak perlu menggunakan kata kunci "return"
+        */
+        const sum = (first, second) => first + second;
+        console.info(sum(10, 20));
+
+        const sumBlock = (first, second) => {
+        return first + second;
+        };
+
+        console.info(sumBlock(100, 100));
+
+        /*
+            arrow function tanpa tanda kurung, ini berlaku jika paramater arrow function hanya 1
+        */
+        const says = name => console.info(`Morning ${name}`);
+        says("Kurumi");
+
+        function giveMeName(callback)
+        {
+            callback("Firza");
+        }
+
+        // arrow function sebagai paramater
+        giveMeName((name) => console.info(`Your name is ${name}`));
+    </script>
+</body>
+</html>

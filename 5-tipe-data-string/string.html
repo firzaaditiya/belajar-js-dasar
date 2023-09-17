@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data String</title>
+</head>
+<body>
+    <script>
+        // menggunakan petik dua
+        document.writeln("Firza Aditiya Ardiansah");
+        document.writeln("<br>");
+        
+        // menggunakan petik satu
+        document.writeln('Youtube Tujuan Pelajar');
+        document.writeln("<br>");
+        
+        // operasi menambahkan string
+        document.writeln("Nama : " + "Firza " + "Aditiya");
+        document.writeln("<br>");
+        document.writeln("Channel : " + "Tujuan Pelajar");
+        document.writeln("<br>");
+
+        /*
+            ESCAPE SEQUENCE
+
+            \n : enter
+            \t : tab
+            \' : petik satu
+            \" : petik dua
+            \\ : slash
+        */
+        document.writeln("<textarea cols=\"30\" rows=\"10\">");
+        document.write("Firza\nAditiya\n");
+        document.write("\\Home\\Firza\n");
+        document.write("\"Tujuan Pelajar\"\n");
+        document.write('\'Belajar Javascript\'\n');
+        document.writeln("</textarea>");
+
+        /*
+            document.writeln = diakhirnya memiliki enter
+            document.write = diakhirnya tidak memiliki enter otomatis
+        */
+    </script>
+</body>
+</html>

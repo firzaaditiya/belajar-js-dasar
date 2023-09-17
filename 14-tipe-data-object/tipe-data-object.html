@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipe Data Object</title>
+</head>
+<body>
+    <script>
+        /*
+            tipe data object ini mirip seperti array namun bukan hal yang sama
+            jadi array di dalam javascript tidak seperti di bahasa pemrograman PHP
+            yang support indexing dengan string contoh `array names["nama"] = "Firza"`
+            di javascript hanya support indexing number tidak menggunakan string jika dipaksa
+            maka menggunakan string maka nanti otomatis javascript akan mengubahnya menjadi tipe data
+            object, jika kita ingin indexing menggunakan string kita bisa menggunakan tipe data object
+
+            didalam tipe data object kita menyebutnya bukan index melainkan property/attribute
+        */
+
+        // membuat object
+        const person = {};
+
+        console.table(person);
+        
+        const orang = {};
+
+        // ubah property atau attibute
+        orang["nama"] = "Firza Aditiya Ardiansah";
+        orang["alamat"] = "Indonesia";
+        orang["umur"] = 19;
+
+        console.table(orang);
+        
+        delete orang["umur"];
+        console.table(orang);
+
+        // membuat dan memberikan nilai awal langsung
+        const orangBaru = {
+            nama : "Firza Aditiya Ardiansah",
+            "alamat tinggal" : "Indonesia",
+            umur_orang : 19
+        };
+
+        console.table(orangBaru);
+
+        console.info(`Nama : ${orangBaru.nama}`);
+
+        // jika kalian ingin mengakses property/attribute yang nama nya memiliki spasi gunakan tanda [] untuk mengaksesnya
+        console.info(`Alamat : ${orangBaru["alamat tinggal"]}`);
+        console.info(`Umur : ${orangBaru.umur_orang}`);
+
+    </script>
+</body>
+</html>

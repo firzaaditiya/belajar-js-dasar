@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Template Expression</title>
+</head>
+<body>
+    <script>
+        const name = "Firza Aditiya";
+        const value = 80;
+
+        // kita bisa menambahkan expression pada string template seperti ${value > 75} yang akan menghasilkan nilai boolean
+        const template = `Name : ${name}, Lulus : ${value > 75}`;
+
+        console.info(template);
+    </script>
+</body>
+</html>

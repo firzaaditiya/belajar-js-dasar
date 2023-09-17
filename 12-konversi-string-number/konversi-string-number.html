@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konversi String dan Number</title>
+</head>
+<body>
+    <script>
+        /*
+        function yang berguna untuk mengkonversi string ke type number
+
+        parseInt() , untuk mengkonversi ke Integer atau bilangan bulat
+        parseFloat() , untuk mengkonversi ke floating point atau pecahan
+        Number() , untuk mengkonversi ke integer atau floating point
+        number.toString() , untuk mengkonversi number ke string
+        */
+
+        const value1 = parseInt("1");
+        const value2 = 1;
+
+        const sum = value1 + value2;
+
+        document.writeln(`<p> ${sum} </p>`);
+        document.writeln(`<p> ${parseInt("1.1")} </p>`);
+        document.writeln(`<p> ${parseFloat("1.1")} </p>`);
+        document.writeln(`<p> ${Number("1.1")} </p>`);
+
+        // number to string
+        const a = 1;
+        const b = 1;
+
+        const total = a.toString() + b.toString();
+
+        document.writeln(`<p>${total}</p>`);
+
+        /*
+        number unik yaitu NaN atau 'Not a Number' jika kita mencoba mengkonversi data yang bukan number
+        misalnya seperti parseInt("salah") maka dia akan menghasilkan nilai NaN
+        */
+        document.writeln(`<p> ${parseInt("salah")} </p>`);
+        document.writeln(`<p> ${parseFloat("1.1text")} </p>`);
+
+        // Number tidak mentoleransi data yang tidak valid
+        document.writeln(`<p> ${Number("salah")} </p>`);
+        document.writeln(`<p> ${Number("1.1text")} </p>`);
+
+        // melakukan operasi pada NaN
+        const n1 = Number("salah"); // NaN
+        const n2 = 100;
+        const sumN = n1 + n2;
+
+        document.writeln(`<p>${sumN}</p>`);
+        
+        /*
+        isNaN() , untuk mengecek apakah sebuah number NaN atau bukan
+        */
+       document.writeln(`<p>${isNaN(n1)}</p>`);
+       document.writeln(`<p>${isNaN(100)}</p>`);
+       document.writeln(`<p>${isNaN("100")}</p>`);
+       document.writeln(`<p>${isNaN("a100")}</p>`);
+       document.writeln(`<p>${isNaN("100a")}</p>`);
+       document.writeln(`<p>${isNaN(NaN)}</p>`);
+    </script>
+</body>
+</html>

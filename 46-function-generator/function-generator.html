@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Generator</title>
+</head>
+<body>
+    <script>
+        /*
+            function generator adalah function yang digunakan untuk membuat data generator
+
+            data generator adalah tempat untuk menghasilkan data dan biasa nya lebih dari satu
+
+            generator adalah data yang bisa di iterasi (di looping) seperti array
+
+            untuk membuat function generator, kita perlu menggunakan tanda asterik (*) setelah kata
+            function
+
+            dan untuk mengembalikan data di tiap iterasi, kita bisa gunakan kata kunti "yield" diikuti
+            dengan data yang akan kita kirimkan di setiap iterasi nya
+        */
+
+        // contoh membuat function generator
+        function* createNames()
+        {
+            // untuk mengembalikan data pada function generator gunakan kata kunci "yield" bukan "return"
+            yield "Firza";
+            yield "Aditiya";
+            yield "Ardiansah";
+        }
+
+        const names = createNames();
+
+        console.info(names);
+
+        // data nya hanya bisa di akses menggunakan iterasi tidak bisa di akses langsung menggunakan index
+        // data nya juga tidak bisa di ubah
+        for (const value of names) {
+            console.info(value);
+        }
+
+        // membuat function generator yang menghasilkan data angka ganjil
+        // ini sifat nya lazy
+        function* buatGanjil(value)
+        {
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 !== 0) {
+                    console.info(`Yield ${i}`);
+                    yield i;
+                }
+            }
+        }
+
+        // ini sifat nya eager
+        function buatGanjilArray(value) {
+            let result = [];
+            for (let i = 1; i <= value; i++) {
+                if (i % 2 !== 0) {
+                    console.info(`Yield ${i}`);
+                    result.push(i);
+                }
+            }
+
+            return result;
+        }
+
+        const angkaGanjil = buatGanjil(20);
+
+        // for (const value of angkaGanjil) {
+        //     console.info(value);
+        // }
+
+        /*
+            lazy evaluation
+
+            data generator itu sifat nya lazy, jadi artinya jika data nya belum kita ambil dari generator,
+            maka yield selanjut nya tidak akan di eksekusi
+
+            ketika dibutuhkan maka akan dieksekusi dan jika tidak dibutuhkan maka tidak akan dieksekusi
+        */
+
+        console.info(angkaGanjil.next().value);
+        console.info(angkaGanjil.next().value);
+        console.info(angkaGanjil.next().value);
+    </script>
+</body>
+</html>

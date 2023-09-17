@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operator Type Of</title>
+</head>
+<body>
+    <script>
+        /*
+            hasil operator typeof adalah string tipe data dari variable nya
+
+            type undefined = undefined
+            type null = object
+            type boolean = boolean
+            type number = number
+            type bigint = bigint
+            type string = string
+            type symbol = symbol
+            type function = function
+
+            diluar dari list diatas maka akan menghasilkan object
+        */
+
+        let data;
+        const typeData = typeof data;
+
+        switch(typeData)
+        {
+            case "undefined":
+                document.writeln("<p>Undefined</p>")
+                break;
+            case "number":
+                document.writeln("<p>Number</p>")
+                break;
+            case "string":
+                document.writeln("<p>String</p>")
+                break;
+            case "object":
+                document.writeln("<p>Object</p>")
+                break;
+            case "boolean":
+                document.writeln("<p>Boolean</p>")
+                break;
+            default:
+                document.writeln("<p>Object</p>")
+        }
+
+    </script>
+</body>
+</html>

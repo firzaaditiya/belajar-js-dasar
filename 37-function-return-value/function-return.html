@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Return</title>
+</head>
+<body>
+    <script>
+        // membuat function yang bisa mengembalikan suatu nilai
+        function sayHello(firstName, lastName)
+        {
+            const say = `Hello ${firstName} ${lastName}`;
+
+            // mengembalikan nilai
+            return say;
+        }
+
+        function getFinalScore(value)
+        {
+            if (value >= 90) {
+                return "A";
+            } else if (value >= 80) {
+                return "B";
+            } else if (value >= 70) {
+                return "C";
+            } else if (value >= 60) {
+                return "D"
+            } else {
+                return "E";
+            }
+        }
+
+        function isContains(array, searchValue)
+        {
+            for (const element of array) {
+                if (element === searchValue) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        const result = sayHello("Firza", "Aditiya");
+        document.writeln(`<p>${result}</p>`);
+        
+        const grade = getFinalScore(80);
+        document.writeln(`<p>${grade}</p>`);
+        
+        const resultContains = isContains([1,2,3,4,5,6], 99);
+        document.writeln(`<p>${resultContains}</p>`);
+
+    </script>
+</body>
+</html>

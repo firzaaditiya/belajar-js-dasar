@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest Paramater</title>
+</head>
+<body>
+    <script>
+        /*
+            rest paramater adalah fitur dimana kita bisa mengirim data sebanyak banyak nya pada satu
+            paramater dan secara otomatis akan dikonversi menjadi array
+
+            ketentuan untuk membuat test paramater
+
+            1.  rest paramater hanya boleh 1 saja tidak boleh lebih
+            2.  rest paramater hanya boleh berada di posisi akhir tidak boleh di tengah maupun di depan, jika memiliki
+                lebih dari 1 paramater
+        */
+
+        // rest paramater di awali titik 3 (...) baru nama paramater nya
+        function sum(name, ...data)
+        {
+            // paramater ...data otomatis akan di konversi menjadi array
+
+            let total = 0;
+            for (const item of data) {
+                total += item;
+            }
+
+            document.writeln(`<p>Total ${name} is ${total}</p>`);
+        }
+
+        sum("orange", 1, 2, 5, 4, 3, 6);
+        sum("apple", 6, 2, 2, 4, 1, 8);
+
+        /*
+            terkadang kita sudah memiliki data array, dan bagaimana cara kita mengirim nya ke rest paramater
+
+            kita bisa menggunakan spread syntax
+
+            
+        */
+
+        const values = [1, 4, 2, 3];
+
+        // sum("mango", values); // gagal
+
+        // contoh penggunaan spread syntax
+        sum("mango", ...[1, 2, 3]);
+        sum("avocado", ...values);
+
+    </script>
+</body>
+</html>
